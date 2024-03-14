@@ -1,5 +1,9 @@
 
 
+showElement('image-person', 'block');
+showText('main-label', 'Ningún mensaje fue encontrado');
+showText('secondary-label', 'Ingresa el texto que desees encriptar o desencriptar');  
+
 
 function encrypt() {
     let encryted_text = ""
@@ -32,13 +36,11 @@ function encrypt() {
                     break;
             }
         }
-        showImage('image-person', 'none');
+
+        showElement('image-person', 'none');
+        showElement('copy-button', 'block');
         showText('main-label', encryted_text);
         changeHeight('main-label','100%');
-        
-        
-        
-        
 
         showText('secondary-label', '');
       
@@ -72,25 +74,38 @@ function showText(className, text) {
     return ;
 }
 
-function showImage(idName, text) {
+function showElement(idName, text) {
     let css_element = document.getElementById(idName);
     css_element.style.display = text;
     return;
 }
 
-showImage('image-person', 'block');
-showText('main-label', 'Ningún mensaje fue encontrado');
-showText('secondary-label', 'Ingresa el texto que desees encriptar o desencriptar');    
+  
 
 function changeHeight(idName, value){
     let css_element = document.getElementById(idName);
     css_element.style.textAlign = 'left'
     css_element.style.height = value
     css_element.style.fontSize = '1.4em'
-    css_element.style.padding = '20px'
+    css_element.style.padding = '28px 20px 20px 20px'
     css_element.style.fontWeight = 'normal';
     css_element.style.color= 'rgba(113, 118, 125, 0.9)'
     css_element.style.width = '100%';
 
     return; 
+}
+
+function copyText(){
+    let inputElement = document.getElementById('main-label');
+    let copy_text = inputElement.textContent;
+
+    navigator.clipboard.writeText(copy_text)
+    .then(() => {
+        console.log('Contenido copiado al portapapeles.');
+    })
+    .catch((error) => {
+        console.error('Error al copiar:', error);
+
+    });
+
 }

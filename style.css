@@ -13,13 +13,13 @@ body {
 
 
 .logo  {
-    padding: 100px 0; 
+    padding: 50px 0; 
 }
 
 
 main {
 
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -113,9 +113,9 @@ textarea {
 
 .buttons-container {
     display: flex;
-
     flex-direction: row;
     justify-content: space-between;
+    margin: 0 100px;
     
 }
 
@@ -129,14 +129,32 @@ textarea {
 .button:last-child {
     color: #0A3871;
     background-color: rgb(211, 218, 228);
+    
+}
+
+#copy-button {
+    text-align: center;
+    font-size: 1.2em;
+    font-kerning: 1.2;
+    border-color: #0A3871;
+    border-radius: 30px;
+    padding: 30px 12%;
+
+    background-color: #FFFFFF;
+    margin: 40px ;
+    color: #0A3871;
+    display: none ;
+
 }
 
 
 .button {
     text-align: center;
+    font-size: 1.2em;
+    font-kerning: 1.2;
     border-color: #0A3871;
     border-radius: 30px;
-    padding: 20px 12%;
+    padding: 30px 12%;
 }
 
 
@@ -166,3 +184,8 @@ textarea {
 
 }
 
+.author  {
+    padding: 20px 0 ;
+    color:  #0A3871;;
+
+}
