@@ -1,10 +1,9 @@
 
-
 showElement('image-person', 'block');
 showText('main-label', 'Ningún mensaje fue encontrado');
 showText('secondary-label', 'Ingresa el texto que desees encriptar o desencriptar');  
 
-
+//Function that encrypts the input text
 function encrypt() {
     let encryted_text = ""
     let inputCode = document.getElementById('input-text').value;
@@ -50,7 +49,7 @@ function encrypt() {
 
 }
 
-
+//Function that decrypts the input text
 function decrypt() {
     let text = encrypt();
 
@@ -68,20 +67,21 @@ function decrypt() {
 
 }
 
+//Function that encrypts the input text
 function showText(className, text) {
     let HTML_element = document.querySelector(`.${className}`);
     HTML_element.innerHTML = text;
     return ;
 }
 
+//Function that shows an element whose display property has been changed
 function showElement(idName, text) {
     let css_element = document.getElementById(idName);
     css_element.style.display = text;
     return;
 }
 
-  
-
+//Function that change the height of the result box
 function changeHeight(idName, value){
     let css_element = document.getElementById(idName);
     css_element.style.textAlign = 'left'
@@ -95,6 +95,7 @@ function changeHeight(idName, value){
     return; 
 }
 
+//Function that copy the text in the clipboard
 function copyText(){
     let inputElement = document.getElementById('main-label');
     let copy_text = inputElement.textContent;
