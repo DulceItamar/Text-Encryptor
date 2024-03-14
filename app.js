@@ -32,6 +32,9 @@ function encrypt() {
                     break;
             }
         }
+
+        showText('main-label', encryted_text);
+        showText('secondary-label', '');
     }
     return encryted_text;
 
@@ -49,6 +52,19 @@ function decrypt() {
     .replace(/ober/g, 'o')
     .replace(/ufat/g, 'u');
 
+   
+    showText('main-label', decrypetd_text);
+    showText('secondary-label', '');
     return decrypetd_text;
 
 }
+
+function showText(className, text) {
+    let HTML_element = document.querySelector(`.${className}`)
+    HTML_element.innerHTML = text;
+    return ;
+}
+
+
+showText('main-label', 'Ningún mensaje fue encontrado');
+showText('secondary-label', 'Ingresa el texto que desees encriptar o desencriptar');    
