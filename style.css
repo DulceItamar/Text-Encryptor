@@ -58,20 +58,23 @@ aside {
 }
 
 
-.input-principal {
+
+
+.text-area {
 
     border: none;
     background-color: #F3F5FC;
     font-size: 2rem;
     height: 80%;
+ line-height: 1.30;
+
 }
 
-
-.input-principal::placeholder {
+.text-area::placeholder {
     color: #0A3871;
-    
-
+    padding: 100px 0 0 0;
 }
+
 
 
 .info-label {
