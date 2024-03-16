@@ -36,13 +36,18 @@ function encrypt() {
             }
         }
 
+
+        
         showElement('image-person', 'none');
         showElement('copy-button', 'block');
         showText('main-label', encryted_text);
         changeHeight('main-label','100%');
+    
 
         showText('secondary-label', '');
-      
+
+
+        
     }
     return encryted_text;
 
@@ -84,13 +89,17 @@ function showElement(idName, text) {
 //Function that change the height of the result box
 function changeHeight(idName, value){
     let css_element = document.getElementById(idName);
+
     css_element.style.textAlign = 'left'
     css_element.style.height = value
-    css_element.style.fontSize = '1.4em'
+
     css_element.style.padding = '28px 20px 20px 20px'
     css_element.style.fontWeight = 'normal';
     css_element.style.color= 'rgba(113, 118, 125, 0.9)'
     css_element.style.width = '100%';
+/*
+    css_element.style.fontSize = '1.4em'
+*/
 
     return; 
 }
@@ -109,4 +118,21 @@ function copyText(){
 
     });
 
+}
+
+
+function changeSize(idName) {
+    let css_element = document.getElementById(idName);
+    let elementWidth = css_element.offsetWidth
+
+    if (elementWidth <= 767 ) {
+        css_element.style.fontSize = '18px';
+        showText('secondary-label', '');
+    } else if ((elementWidth >= 767 ) && (elementWidth <= 1024 )) {
+        css_element.style.fontSize = '1.1em';
+        showText('secondary-label', '');
+    } else {
+        css_element.style.fontSize = '1.4em';
+        showText('secondary-label', '');
+    } 
 }
